@@ -22,17 +22,17 @@ const amigos = [
     {nombre: 'José', edad: 40}
 ];
 
-// recorre el array de amigos y muestra su nombre y edad
-let salida = '';
-for (let i = 0; i < amigos.length; i++) {
+// // recorre el array de amigos y muestra su nombre y edad
+// let salida = '';
+// for (let i = 0; i < amigos.length; i++) {
 
-    salida = salida + `<li> ${amigos[i].nombre} - ${amigos[i].edad} años </li>`;
-    console.log(amigos[i].nombre);
-}
-// dibuja en el html el array de amigos
-document.getElementById('lista').innerHTML = salida
+//     salida = salida + `<li> ${amigos[i].nombre} - ${amigos[i].edad} años </li>`;
+//     console.log(amigos[i].nombre);
+// }
+// // dibuja en el html el array de amigos
+// document.getElementById('lista').innerHTML = salida
 
-console.log(usuario);
+// console.log(usuario);
 
 
 
@@ -53,7 +53,10 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 .then(data => {
     // console.log(data);
     for (let i = 0; i < data.length; i++) {
-            elementos += `<li>${data[i].title}</li>`; 
+            elementos += `<li>${data[i].title}
+            <a href="detail.html?id=${data[i].id}">ver detalle</a>
+
+            </li>`; 
             console.log(data[i].title);
         }
         document.getElementById('posts').innerHTML = elementos;
